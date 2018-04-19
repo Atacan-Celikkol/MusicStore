@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminManager/Views/Shared/_Layout.cshtml";
+}
+ <!-- Start Content Box -->
+<div class="content-box-header">
+    <h3>
+        Album 
+    </h3>
+    <ul class="content-box-tabs">
+        <li><a href="#tab1" id="firsttab" class="default-tab">Liste</a></li>
+        <!-- href must be unique and match the id of target div -->
+        <li><a href="#tab2" id="secondtab">Ekleme Ekranı</a></li>
+    </ul>
+    <div class="clear">
+    </div>
+</div>
+<!-- End .content-box-header -->
+<div class="content-box-content">
+    <div class="tab-content default-tab" id="tab1">
+        <!-- This is the target div. id must match the href of this div's tab -->
+        @Html.Action("_AlbumList", "Album")
+
+    </div>
+    <!-- End #tab1 -->
+    <div class="tab-content" id="tab2">
+        @Html.Action("AddAlbum", "Album")
+    </div>
+    <!-- End #tab2 -->
+</div>
+<!-- End .content-box-content -->
+
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                var htmlcontent = '<div style="overflow:hidden;"><img id="jcropImage" src="' + e.target.result + '" height="400" /><br/><input style="float:right;" onclick="GetCoords()" type="button" id="btnSave" class="button" value="Kaydet" /></div>';
+                //alert(htmlcontent);
+                $.fancybox.open({
+                    'content': htmlcontent,
+                    'autoDimensions': true,
+                    'scrolling': 'no',
+                    'overlayOpacity': 0.8,
+                    'afterShow': function () {
+                        $("#jcropImage").Jcrop({
+                            setSelect: [100, 100, 50, 50],
+                            aspectRatio: 100 / 75,
+                            onChange: showCoords,
+                            onSelect: showCoords
+                        });
+                    }
+                });
+            }
+            reader.readAsDataURL(input.files[0]);
+
+        }
+    }
+    function showCoords(c) {
+        $("#coordx1").val(c.x);
+        $("#coordx2").val(c.x2);
+        $("#coordy1").val(c.y);
+        $("#coordy2").val(c.y2);
+    }
+
+    function GetCoords() {
+        var x1 = parseInt($("#coordx1").val());
+        var x2 = parseInt($("#coordx2").val());
+        var y1 = parseInt($("#coordy1").val());
+        var y2 = parseInt($("#coordy2").val());
+        var myData = {
+            PictureString: $("#jcropImage").attr('src'),
+            CoordX1: x1,
+            CoordX2: x2,
+            CoordY1: y1,
+            CoordY2: y2
+        }
+        var temp = $("#Id").val();
+        var id;
+        if (temp >= 0) {
+            id = temp;//Resmi güncellerken idsini alma
+        } else {
+            id = 0;//eklerken id alma
+        }
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("AddPicture", "Album")',
+            data: { id: id, data: JSON.stringify(myData) },
+            success: function (data) {
+                $.fancybox.close();
+                $("#image").attr('src', data).slideDown(500);
+                $("#AlbumArtUrl").val(data);
+            }
+        });
+    }
+
+    function DefaultView() {
+        $("#tab1").show();
+        $("#tab2").hide();
+        $("#firsttab").addClass("current");
+        $("#secondtab").removeClass("current");
+        $("table tbody tr:nth-child(2n-1)").addClass("alt-row")
+      
+    }
+    function SendGenre(id) {
+        var cvp = confirm("Albumu Güncellemek İstediğinize Eminmisiniz");
+        if (cvp) {
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("UpdateAlbum","Album")',
+                data: { id: id },
+                success: function (data) {
+                    $("#tab2").html(data);
+                    $("#tab2").show();
+                    $("#tab1").hide();
+                    $("#firsttab").removeClass("current");
+                    $("#secondtab").addClass("current");
+                }
+
+            })
+        }
+    }
+    function DeleteGenre(id) {
+        var cvp = confirm("Albumu Silmek İstediğinize Eminmisiniz");
+        if (cvp) {
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("DeleteAlbum","Album")',
+                data: { id: id },
+                success: function (data) {
+                    $("#tab1").html(data);
+                    $("table tbody tr:nth-child(2n-1)").addClass("alt-row")
+                    $("table tbody tr:nth-child(2n)").removeClass("alt-row")
+                }
+
+            })
+        }
+    }
+</script>
+

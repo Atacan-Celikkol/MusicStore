@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminManager/Views/Shared/_Layout.cshtml";
+}
+
+ <!-- Start Content Box -->
+<div class="content-box-header">
+    <h3>
+        Content box
+    </h3>
+    <ul class="content-box-tabs">
+        <li><a href="#tab1" id="firsttab" class="default-tab">Liste</a></li>
+        <!-- href must be unique and match the id of target div -->
+        <li><a href="#tab2" id="secondtab">Ekleme Ekranı</a></li>
+    </ul>
+    <div class="clear">
+    </div>
+</div>
+<!-- End .content-box-header -->
+<div class="content-box-content">
+    <div class="tab-content default-tab" id="tab1">
+        <!-- This is the target div. id must match the href of this div's tab -->
+        @Html.Action("_GenreList","Genre")
+        
+    </div>
+    <!-- End #tab1 -->
+    <div class="tab-content" id="tab2">
+        @Html.Action("AddGenre","Genre")
+    </div>
+    <!-- End #tab2 -->
+</div>
+<!-- End .content-box-content -->
+
+
+<script>
+    //$.ajax({
+    //    type: "Post",
+    //    url: "",
+    //    data: {},
+    //    success: function (data) {
+    //        $("#tab1").html(data);
+    //    }
+    //})
+
+    function DefaultView() {
+        $("#tab1").show();
+        $("#tab2").hide();
+        $("#firsttab").addClass("current");
+        $("#secondtab").removeClass("current");
+        $("table tbody tr:nth-child(2n-1)").addClass("alt-row")
+        $("#txtName").val("");
+        $("#txtDescription").val("");
+
+    }
+    function SendGenre(id) {
+        var cvp = confirm("Turu Güncellemek İstediğinize Eminmisiniz");
+        if (cvp) {
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("UpdateGenre","Genre")',
+                data: { id: id },
+                success: function (data) {
+                    $("#tab2").html(data);
+                    $("#tab2").show();
+                    $("#tab1").hide();
+                    $("#firsttab").removeClass("current");
+                    $("#secondtab").addClass("current");
+                }
+
+            })
+        }
+    }
+    function DeleteGenre(id) {
+        var cvp = confirm("Turu Silmek İstediğinize Eminmisiniz");
+        if (cvp) {
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("DeleteGenre","Genre")',
+                data: { id: id },
+                success: function (data) {
+                    $("#tab1").html(data);
+                    $("table tbody tr:nth-child(2n-1)").addClass("alt-row")
+                    $("table tbody tr:nth-child(2n)").removeClass("alt-row")
+                }
+
+            })
+        }
+    }
+</script>

@@ -1,0 +1,44 @@
+﻿@model Genre
+@using (Ajax.BeginForm((string)ViewBag.Process, "Genre", new AjaxOptions()
+    {
+        HttpMethod = "Post",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId="tab1",
+        OnSuccess="DefaultView"
+}))
+{
+    <fieldset>
+        @Html.ValidationSummary(true)
+        <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+        @Html.HiddenFor(x => x.ID)
+        <p>
+            <label>
+               Name
+            </label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "text - input small - input", id = "txtName" })
+             @Html.ValidationMessageFor(x => x.Name)
+              @*<span class="input-notification success png_bg">Successful message</span>*@
+            <!-- Classes for input-notification: success, error, information, attention -->
+            <br />
+          
+        </p>
+        <p>
+            <label>
+                Descirption
+            </label>
+            @Html.TextBoxFor(x => x.Description, new { @class = "text - input small - input", id = "txtDescription" })
+            @Html.ValidationMessageFor(x => x.Description)
+        </p>
+        
+        
+        
+        
+        
+        <p>
+            <input class="button" type="submit" value="Kaydet" />
+        </p>
+    </fieldset>
+    <div class="clear">
+    </div>
+    <!-- End .clear -->
+}
