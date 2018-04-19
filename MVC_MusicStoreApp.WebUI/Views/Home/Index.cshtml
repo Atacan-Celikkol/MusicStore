@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model List<Album>
+
+<h2>Album List</h2>
+
+<ul id="album-list">
+    @foreach (Album item in Model)
+    {
+        <li>
+            <a href='@Url.Action("Details","Store",new {id=item.ID })'>
+                <img src='@Url.Content(item.AlbumArtUrl)' alt="@item.Title" width="100" height="75" />
+            </a>
+            <div style="text-align:center">
+                <span>@string.Format("{0}...",item.Title.Substring(0,item.Title.Length>=10 ?10:item.Title.Length))</span>
+                <br />
+                <a href="javascript:void(0)" onclick="AddToMyCart(@item.ID)">Add To Cart</a>
+            </div>
+        </li>
+    }
+</ul>
+
+@section scripts{
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        function AddToMyCart(id) {
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("AddToCart","Cart")',
+                data: { id: id },
+                success: function (data) {
+                    $("#navlist li:nth-child(3)").html(data);
+                }
+                })
+        }
+    </script>
+    }

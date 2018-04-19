@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UserDetail
+
+
+@using (Html.BeginForm("Login","Account",FormMethod.Post))
+{
+    <fieldset>
+        <legend>Kullanıcı Girişi</legend>
+        <p>
+            <label>Kullanıcı Adı</label>
+            @Html.TextBoxFor(x=>x.UserName)
+        </p>
+        <p>
+            <label>Şifre</label>
+            @Html.TextBoxFor(x=>x.Password)
+        </p>
+        <p>
+            <input type="submit" name="name" value="Giriş Yap" />
+        </p>
+    </fieldset>
+}
+

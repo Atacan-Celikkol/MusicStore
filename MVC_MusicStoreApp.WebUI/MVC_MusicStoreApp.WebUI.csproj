@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20A50176-9F14-47A8-A666-624502749E52}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVC_MusicStoreApp.WebUI</RootNamespace>
+    <AssemblyName>MVC_MusicStoreApp.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\AdminManager\Content\fancybox\blank.gif" />
+    <Content Include="Areas\AdminManager\Content\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Areas\AdminManager\Content\fancybox\fancybox_loading.gif" />
+    <Content Include="Areas\AdminManager\Content\fancybox\fancybox_overlay.png" />
+    <Content Include="Areas\AdminManager\Content\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Areas\AdminManager\Content\fancybox\fancybox_sprite.png" />
+    <Content Include="Areas\AdminManager\Content\fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Areas\AdminManager\Content\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Areas\AdminManager\Content\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Areas\AdminManager\Content\fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Areas\AdminManager\Content\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Areas\AdminManager\Content\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Areas\AdminManager\Content\fancybox\jquery.fancybox.css" />
+    <Content Include="Areas\AdminManager\Content\fancybox\jquery.fancybox.js" />
+    <Content Include="Areas\AdminManager\Content\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Areas\AdminManager\Content\fancybox\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Areas\AdminManager\Content\Jcrop\css\Jcrop.gif" />
+    <Content Include="Areas\AdminManager\Content\Jcrop\css\jquery.Jcrop.css" />
+    <Content Include="Areas\AdminManager\Content\Jcrop\css\jquery.Jcrop.min.css" />
+    <Content Include="Areas\AdminManager\Content\Jcrop\jquery.Jcrop.js" />
+    <Content Include="Areas\AdminManager\Content\Jcrop\jquery.Jcrop.min.js" />
+    <Content Include="Areas\AdminManager\Content\resources\css\invalid.css" />
+    <Content Include="Areas\AdminManager\Content\resources\css\reset.css" />
+    <Content Include="Areas\AdminManager\Content\resources\css\style.css" />
+    <Content Include="Areas\AdminManager\Content\resources\images\b.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-body.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-button-green.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-content-box.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-form-field.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-login-top.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-login.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-menu-item-current.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-menu-item-green.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-radial-gradient.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bg-sidebar.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\bl.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\br.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\closelabel.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\bullet_black.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\clock_48.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\comment_48.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\cross.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\cross_circle.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\cross_grey_small.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\exclamation.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\hammer_screwdriver.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\image_add_48.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\information.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\paper_content_pencil_48.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\pencil.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\pencil_48.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\tick_circle.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\loading.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\logo.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\menu-current-arrow.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\shortcut-button-bg.gif" />
+    <Content Include="Areas\AdminManager\Content\resources\images\tl.png" />
+    <Content Include="Areas\AdminManager\Content\resources\images\tr.png" />
+    <Content Include="Areas\AdminManager\Content\resources\scripts\facebox.js" />
+    <Content Include="Areas\AdminManager\Content\resources\scripts\jquery-1.3.2.min.js" />
+    <Content Include="Areas\AdminManager\Content\resources\scripts\jquery.wysiwyg.js" />
+    <Content Include="Areas\AdminManager\Content\resources\scripts\simpla.jquery.configuration.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\home-showcase.png" />
+    <Content Include="Content\Images\loadinggif.gif" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\placeholder.gif" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\AdminManager\Content\resources\images\icons\Thumbs.db" />
+    <Content Include="Areas\AdminManager\Views\Genre\Index.cshtml" />
+    <Content Include="Areas\AdminManager\Views\Genre\_GenreList.cshtml" />
+    <Content Include="Areas\AdminManager\Views\Genre\_GenreForm.cshtml" />
+    <Content Include="Areas\AdminManager\Views\Album\_AlbumList.cshtml" />
+    <Content Include="Areas\AdminManager\Views\Album\Index.cshtml" />
+    <Content Include="Areas\AdminManager\Views\Album\_AlbumForm.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BasicAutFilterAttribute.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\AdminManager\AdminManagerAreaRegistration.cs" />
+    <Compile Include="Areas\AdminManager\Controllers\AdminController.cs" />
+    <Compile Include="Areas\AdminManager\Controllers\AlbumController.cs" />
+    <Compile Include="Areas\AdminManager\Controllers\GenreController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\CartItem.cs" />
+    <Compile Include="Tools\MailHelper.cs" />
+    <Compile Include="Tools\Methods.cs" />
+    <Compile Include="Tools\MyCart.cs" />
+    <Compile Include="Tools\PictureToSave.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Areas\AdminManager\Views\web.config" />
+    <Content Include="Areas\AdminManager\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AdminManager\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\AdminManager\Views\Admin\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_GenrePartial.cshtml" />
+    <Content Include="Views\Cart\_CartButton.cshtml" />
+    <Content Include="Views\Cart\_CartItems.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Order\OrderCheck.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\AdminManager\Models\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Album\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVC_MusicStoreApp.BLL\MVC_MusicStoreApp.BLL.csproj">
+      <Project>{961a3f74-9689-4886-9d13-bc090b0a8d97}</Project>
+      <Name>MVC_MusicStoreApp.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC_MusicStoreApp.DAL\MVC_MusicStoreApp.DAL.csproj">
+      <Project>{a9ca7f0e-c460-4a20-8582-0f45dca8d480}</Project>
+      <Name>MVC_MusicStoreApp.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39816</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:39816/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

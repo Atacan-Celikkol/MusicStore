@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "OrderCheck";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Siparişiniz Alınmıştır Birazdan Ana Sayfaya Yönlendirileceksiniz....</h2>
+<img src="~/Content/Images/loadinggif.gif" alt="Alternate Text" />
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            window.location.href = "http://localhost:39816/Home/Index/"
+        },3000)
+    })
+</script>

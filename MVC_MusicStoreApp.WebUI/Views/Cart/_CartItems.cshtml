@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "_CartItems";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MVC_MusicStoreApp.WebUI.Tools
+
+@if ((Session["cart"] as MyCart).Sepet.Count <= 0)
+{
+    <h3>Sepetiniz Boş Ürün Eklemesi Yapmak İçin <a href='@Url.Action("Index", "Home")'>Tıklayınız</a> </h3>
+}
+else
+{
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>SubTotal</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in (Session["cart"] as MyCart).Sepet)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    @item.SubTotal
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+           
+            <td style="text-align:right" colspan="5"> @string.Format("{0:C2}", (Session["cart"] as MyCart).TotalPrice)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                 @Html.ActionLink("Alış-Verişe Devam Et","Index","Home")
+            </td>
+            <td colspan="2">
+                @Html.ActionLink("Siparişi Onayla","OrderCheck","Order")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+}
+

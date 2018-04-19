@@ -1,0 +1,8 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <li>     @Html.ActionLink("Hoşgeldiniz Sn."+ User.Identity.Name+" Çıkış","LogOut","Account")</li>
+}
+else
+{
+    <li>@Html.ActionLink("Register","Register","Account")</li>
+}
